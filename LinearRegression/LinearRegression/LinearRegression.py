@@ -12,7 +12,7 @@ from MY_ALGORITHM_STUDY.utils.features.prepare_for_training import prepare_for_t
 # print(data2[0].shape)
 class LinearRegression:
     def __init__(self,data,labels,polynomial_degree = 0,sinusoid_degree = 0,normalize_data = True):
-        (data_processed,features_mean,features_deviation) = prepare_for_training(data,labels,polynomial_degree = 0,sinusoid_degree=0,normalize_data=True)
+        (data_processed,features_mean,features_deviation) = prepare_for_training(data,labels,polynomial_degree,sinusoid_degree,normalize_data)
         self.data = data_processed
         self.labels = labels
         self.features_mean = features_mean
