@@ -23,9 +23,9 @@ def polynomial(dataset,polynomial_degree,normalize_data = False):
         raise ValueError('Can not generate polynomials for two sets with different number of rows')
     if(data1_shapex == 0 and data2_shapex == 0):
         raise ValueError('Can not generate polynomials for two sets with no columns')
-    if data1_shapex == 0:
+    if data1_shapey == 0:
         dataset_1 = dataset_2
-    if data2_shapex == 0:
+    if data2_shapey == 0:
         dataset_2 = dataset_1
     num_features = data1_shapey if data1_shapey < data2_shapey else data2_shapey
     dataset_1 = dataset_1[:,:num_features]
