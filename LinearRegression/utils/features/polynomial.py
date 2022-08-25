@@ -25,11 +25,12 @@ def polynomial(dataset,polynomial_degree,normalize_data = False):
         raise ValueError('Can not generate polynomials for two sets with no columns')
     if data1_shapey == 0:
         dataset_1 = dataset_2
-    if data2_shapey == 0:
+    elif data2_shapey == 0:
         dataset_2 = dataset_1
-    num_features = data1_shapey if data1_shapey < data2_shapey else data2_shapey
-    dataset_1 = dataset_1[:,:num_features]
-    dataset_2 = dataset_2[:,:num_features]
+    else:
+        num_features = data1_shapey if data1_shapey < data2_shapey else data2_shapey
+        dataset_1 = dataset_1[:,:num_features]
+        dataset_2 = dataset_2[:,:num_features]
     polynomials = np.empty((data1_shapex,0))
     for i in range(1,polynomial_degree+1):
         for j in range(i+1):
